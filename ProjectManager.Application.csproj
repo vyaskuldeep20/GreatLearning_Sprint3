@@ -1,0 +1,45 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+
+  <PropertyGroup Condition=" '$(RunConfiguration)' == 'ProjectManager' " />
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <Folder Include="Data\" />
+    <Folder Include="Data\Core\" />
+    <Folder Include="src\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.5" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.0.7" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="5.0.3" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.12" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.12">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" Version="3.1.12" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.8" />
+    <PackageReference Include="xunit" Version="2.4.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="3.1.14" />
+    <PackageReference Include="System.Net.Http.Formatting.Extension" Version="5.2.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="ProjectManager.Test\obj\Debug\netcoreapp3.1\.NETCoreApp,Version=v3.1.AssemblyAttributes.cs" />
+    <Compile Remove="ProjectManager.Test\ProjectControllerTests.cs" />
+    <Compile Remove="ProjectManager.Test\ProjectControllerTestFactory.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="ProjectManager.Test\bin\Debug\netcoreapp3.1\ProjectManager.Application.deps.json" />
+    <Content Remove="ProjectManager.Test\obj\ProjectManager.Test.csproj.nuget.dgspec.json" />
+    <Content Remove="ProjectManager.Test\obj\project.assets.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="ProjectManager.Test\obj\ProjectManager.Test.csproj.nuget.g.targets" />
+    <None Remove="ProjectManager.Test\obj\project.nuget.cache" />
+    <None Remove="ProjectManager.Test\obj\ProjectManager.Test.csproj.nuget.g.props" />
+  </ItemGroup>
+</Project>
